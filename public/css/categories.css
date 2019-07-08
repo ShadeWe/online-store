@@ -1,0 +1,33 @@
+.product-price {
+	color: rgb(0, 157, 39);
+}
+
+.product-image {
+	height: 180px;
+	width: 100%;
+	min-width: 200px;
+	background-image: url("/img/oil.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-color: #d7d7d7;
+}
+
+.product-unit {
+	margin: 10px;
+	padding: 5px;
+	display: inline-block;
+	border: 2px solid rgb(232, 232, 232);
+	background-color: rgb(247, 247, 247);
+	border-radius: 4px;
+	width: 30%;
+	min-width: 200px;
+	height: auto;
+}
+
+@media screen and (max-width: 1145px) {
+  .product-unit {
+		width: 30%;
+		min-width: 350px;
+	}
+}
