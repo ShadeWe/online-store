@@ -26,15 +26,23 @@
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
-                <li><a href="#" class="text-white">Email me</a></li>
+									@if (isset($username))
+										<li><a href="/admin-panel" class="text-white">Administration Panel</a></li>
+                		<li><a href="/logout" class="text-white">Logout</a></li>
+									@else
+										<li><a href="/admin-panel" class="text-white">Administration Panel</a></li>
+									@endif
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="navbar navbar-dark bg-dark shadow-sm">
+			<div class="navbar navbar-dark bg-dark shadow-sm">
+				@isset($username)
+				<div style="position: absolute; right: 20px; top: 70px; color: black; text-align: right;">You are logged on as: <br />
+					<kbd>{{ $username }}</kbd>
+				</div>
+				@endisset
         <div class="container d-flex justify-content-between">
           <a href="/" class="navbar-brand d-flex align-items-center">
                 <strong>online-store</strong>

@@ -57,12 +57,11 @@
                     </ul>
                 </div>
                 <div class="col-md-9" style="padding: 20px;">
-
 										@foreach($products as $product)
 										<div class="product-unit">
 											<div class="product-image"></div>
 											<h5 class="card-title" style="padding: 10px 0 0 5px;"><strong>{{ $product->{'product-name'} }}</strong></h5>
-											<p class="card-text" style="padding-left: 5px; margin-bottom: 7px;">{{ $product->short_desc }}</p>
+											<p class="card-text" style="padding-left: 5px; margin-bottom: 7px; height: 50px;">{{ $product->short_desc }}</p>
 											<div class="product-price" style="padding-left: 5px; margin-bottom: 7px;"><strong>{{ $product->{'product-price'} }} RUB</strong></div>
 											<a href="#" style="float: right;"class="btn btn-primary">Get into it</a>
 										</div>
