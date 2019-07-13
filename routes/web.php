@@ -11,9 +11,11 @@
 |
 */
 
-
 Route::get('/', 'HomeController@index');
+
 Route::get('/admin-panel', 'AdminPanelController@index');
+Route::delete('/admin-panel', 'AdminPanelController@deleteProducts');
+
 Route::get('/categories', 'ProductController@index');
 
 Route::get('/logout', function() { // deleting the username field from the session and redirecting to the main page.
