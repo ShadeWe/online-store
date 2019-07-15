@@ -13,10 +13,13 @@ function deleteProducts() {
         }
     }
 
+    if (productsId.length == 0) return 0;   // if there's nothing to delete
+
+
     var str_json = JSON.stringify(productsId);  // it's to be sent to the server in JSON format
 
     var xhr = new XMLHttpRequest();
-    xhr.open("DELETE", "/admin-panel", true);
+    xhr.open("DELETE", "/admin-panel/products", true);
     xhr.setRequestHeader('X-CSRF-TOKEN', document.getElementsByName('csrf-token')[0].getAttribute('content'));
     xhr.send(str_json);
 
@@ -44,4 +47,7 @@ function deleteProductFromPage(productsId) {
 
     for (let i = 0; i < rawsToDelete.length; i++)
         rawsToDelete[i].remove();
+
+    animatePopUpMessage('good', "<i>The products you've selected have been deleted <b>successfuly</b></i>")
+
 }

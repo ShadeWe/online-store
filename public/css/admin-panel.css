@@ -104,3 +104,39 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+#pop-up-message-good {
+    opacity: 0;
+    line-height: 25px;
+    text-align: center;
+    font-size: 13px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border: 3px solid rgb(72, 236, 68);
+    border-radius: 10px;
+    transition-duration: 0.7s;
+}
+
+.pop-up-message {
+    opacity: 0;
+    line-height: 25px;
+    text-align: center;
+    font-size: 13px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 10px;
+    transition-duration: 0.7s;
+}
+
+#bad-message { border: 3px solid rgb(242, 57, 135); }
+#good-message { border: 3px solid rgb(85, 249, 76); }
