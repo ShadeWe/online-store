@@ -14,18 +14,15 @@ class AdminPanelController extends Controller
      */
     public function index()
 	{
-		if (session()->has('username')) {
-			return view('adminpanel');
-		}
-		else
-			return redirect('login');
+		return view('adminpanel');
 	}
 
     /*
      *  domain.smth/admin-panel/products GET
      *  obtain products from database and return a page with all products shown
      */
-    public function seeProducts() {
+    public function seeProducts()
+    {
         $products = App\Product::all();
         return view('adminpanel', ['products' => $products, 'include' => 'admin-panel-views.see-all-products']);
     }
@@ -34,7 +31,8 @@ class AdminPanelController extends Controller
      *  domain.smth/admin-panel/new-product GET
      *  return a page with a form for uploading new products into database
      */
-    public function newProduct() {
+    public function newProduct()
+    {
         return view('adminpanel', ['include' => 'admin-panel-views.add-new-products']);
     }
 
@@ -42,7 +40,8 @@ class AdminPanelController extends Controller
      *  domain.smth/admin-panel/products DELETE
      *  Deleting rows choosed by the user from the Product's table
      */
-    public function deleteProducts(Request $request) {
+    public function deleteProducts(Request $request)
+    {
         $data = json_decode($request->getContent(), true);
         for ($i = 0; $i < count($data); $i++)
             App\Product::where('id', $data[$i])->delete();
@@ -54,7 +53,8 @@ class AdminPanelController extends Controller
      *  simply adds a new product to database verifying every single field to be passed from the user.
      *  if a field isn't passed by the user, return this page with a message.
      */
-    public function addProduct(Request $request) {
+    public function addProduct(Request $request)
+    {
         $data = $request->all();
         $product = new App\Product;
 
