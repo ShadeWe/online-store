@@ -9,14 +9,13 @@ class AdminPanelController extends Controller
 {
     /*
      *  domain.smth/admin-panel GET
-     *  If the user is not logged in, redirect to the login page
+     *  If the user is not logged in, redirect to the login page (checkauth middleware)
      *  otherwise, return the home page of the admin panel
      */
     public function index()
-	{
-		return view('adminpanel');
-	}
-
+    {
+        return view('adminpanel');
+    }
     /*
      *  domain.smth/admin-panel/products GET
      *  obtain products from database and return a page with all products shown
@@ -37,7 +36,7 @@ class AdminPanelController extends Controller
     }
 
     /*
-     *  domain.smth/admin-panel/products DELETE
+     *  domain.smth/admin-panel/products DELETE (AJAX)
      *  Deleting rows choosed by the user from the Product's table
      */
     public function deleteProducts(Request $request)

@@ -49,5 +49,21 @@ function deleteProductFromPage(productsId) {
         rawsToDelete[i].remove();
 
     animatePopUpMessage('good', "<i>The products you've selected have been deleted <b>successfuly</b></i>")
+}
 
+
+function advancedSearch() {
+
+  var searchBox =   document.getElementById('advanced-search');
+
+  console.log(searchBox.getAttribute('shown'));
+  if (searchBox.getAttribute('shown') == 'false') {
+    searchBox.style.padding = '10px';
+    searchBox.style.height = '250px';
+    searchBox.setAttribute('shown', 'true');
+  } else if (searchBox.getAttribute('shown') == 'true') {
+    searchBox.style.padding = 0;
+    searchBox.style.height = 0;
+    searchBox.setAttribute('shown', 'false');
+  }
 }
